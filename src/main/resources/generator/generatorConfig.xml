@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+   <classPathEntry location="D:\xueXiWord\maven\repo\mysql\mysql-connector-java\5.1.38\mysql-connector-java-5.1.38.jar"/>
+ <context id="MySqlContext" targetRuntime="MyBatis3" defaultModelType="flat">
+    <property name="javaFileEncoding" value="UTF-8"/>
+    
+    <commentGenerator>
+      <property name="suppressDate" value="true"/>
+      <property name="addRemarkComments" value="true"/>
+    </commentGenerator>
+    
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver" 
+                    connectionURL="jdbc:mysql://47.100.234.70:3307/environmental"
+                    userId="root"
+                    password="123456"
+                    ></jdbcConnection>
+    <javaModelGenerator targetPackage="com.environmental.entity" targetProject="src\main\java">
+       <property name="trimStrings" value="true"/>
+    </javaModelGenerator>                
+    
+    <sqlMapGenerator targetPackage="mapper" targetProject="src\main\resources" />
+     
+    <javaClientGenerator targetPackage="com.environmental.dao" targetProject="src\main\java" type="XMLMAPPER"/>
+      
+    <table tableName="env_allinfo"
+           enableCountByExample="true"
+           enableUpdateByExample="true"
+           enableDeleteByExample="true"
+           selectByExampleQueryId="true">
+          <generatedKey column="id" sqlStatement="Mysql" identity="true"></generatedKey>
+    </table>
+ </context>
+</generatorConfiguration>
